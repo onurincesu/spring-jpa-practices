@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import jakarta.validation.constraints.NotEmpty;
 
 //will be used for insert and update 
 @Getter
@@ -14,6 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class DtoStudentIU {
 	
+	@NotEmpty(message="İsim alanı boş bırakılamaz")
 	private String firstName;
 	private String lastName;
 	private Date birthOfDate;

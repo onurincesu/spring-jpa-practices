@@ -18,6 +18,8 @@ import com.example.onurincesu.dto.DtoStudentIU;
 import com.example.onurincesu.entities.Student;
 import com.example.onurincesu.services.IStudentService;
 
+import jakarta.validation.Valid;
+
 
 @RestController
 @RequestMapping(path="/rest/api/student")
@@ -28,7 +30,7 @@ public class StudentControllerImpl implements IStudentController {
 	
 	@PostMapping(path = "/save")
 	@Override
-	public DtoStudent saveStudent(@RequestBody DtoStudentIU dtoStudentIU) {
+	public DtoStudent saveStudent(@RequestBody @Valid DtoStudentIU dtoStudentIU) {
 		return studentService.saveStudent(dtoStudentIU );
 	}
 	
